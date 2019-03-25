@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7792891771156075450}
   - component: {fileID: 7792891771156075449}
   - component: {fileID: 7792891771156075448}
-  - component: {fileID: 7792891771156075399}
+  - component: {fileID: 7064996563902749436}
   m_Layer: 0
   m_Name: WaterButton
   m_TagString: Button
@@ -93,7 +93,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &7792891771156075399
+--- !u!114 &7064996563902749436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,12 +102,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7792891771156075397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22db061df45e51649b010d239f429b36, type: 3}
+  m_Script: {fileID: 11500000, guid: a2102621a9d2d2349ba2b987514b01a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   drinkSpawnPoint: {fileID: 7792891773013300225}
   drinkChoices: 2
-  drinkPrefab: {fileID: 610946469862695252, guid: cf22438c82fc8a74b9d9561627e4cd70,
+  drinkPrefab: {fileID: 568315998206696560, guid: 141080fbe6753c54da5f146a2ec9910e,
     type: 3}
 --- !u!1 &7792891771921061417
 GameObject:
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7792891771921061422}
   - component: {fileID: 7792891771921061421}
   - component: {fileID: 7792891771921061420}
-  - component: {fileID: 7792891771921061419}
+  - component: {fileID: 8189339382408022075}
   m_Layer: 0
   m_Name: TheaButton
   m_TagString: Button
@@ -202,7 +202,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &7792891771921061419
+--- !u!114 &8189339382408022075
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,12 +211,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7792891771921061417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22db061df45e51649b010d239f429b36, type: 3}
+  m_Script: {fileID: 11500000, guid: a2102621a9d2d2349ba2b987514b01a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   drinkSpawnPoint: {fileID: 7792891773013300225}
   drinkChoices: 1
-  drinkPrefab: {fileID: 610946469862695252, guid: a2dbd052d6b2c774583b252cd2c0fbd2,
+  drinkPrefab: {fileID: 9100863381786384461, guid: ea2d395a20845da45bd45e26ad0832f3,
     type: 3}
 --- !u!1 &7792891772463829073
 GameObject:
@@ -320,12 +320,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7792891772463829073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22db061df45e51649b010d239f429b36, type: 3}
+  m_Script: {fileID: 11500000, guid: a2102621a9d2d2349ba2b987514b01a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   drinkSpawnPoint: {fileID: 7792891773013300225}
   drinkChoices: 0
-  drinkPrefab: {fileID: 610946469862695252, guid: 1faf09c662e237743b9798d7c823da9f,
+  drinkPrefab: {fileID: 4784195929125180556, guid: 095390c81ac9cd1458359fc34df6757f,
     type: 3}
 --- !u!1 &7792891772837598178
 GameObject:
