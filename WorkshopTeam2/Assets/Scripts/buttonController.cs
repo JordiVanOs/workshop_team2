@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class buttonController : MonoBehaviour
 {
-    public bool finalAnswer = false;
+    public bool buttonA = false;
+    public bool buttonB = false;
+    public bool buttonC = false;
 }
