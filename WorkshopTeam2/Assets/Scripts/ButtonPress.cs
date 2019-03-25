@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,7 +12,9 @@ public class ButtonPress : MonoBehaviour
     public UnityEvent OnClick = new UnityEvent();
     public int buttonABC; //1 = a , 2 = b, 3 = c
     private bool buttonPressed = false;
+    public buttonController setBool;
     public float pressedDownTime;
+    
     private bool timerEnd = false;
 
 
@@ -27,18 +30,19 @@ public class ButtonPress : MonoBehaviour
 
     void pressing()
     {
-        buttonPressed = true;
-
+        
         if (buttonABC == 3)
         {
+            setBool.finalAnswer = true;
             Debug.Log("Answer Correct: " + buttonABC + " is clicked");
         }
         else
         {
+            setBool.finalAnswer = false;
             Debug.Log("False: " + buttonABC + " is clicked");
         }
 
-        buttonPressed = false;
+      
     }
 
     // Update is called once per frame
@@ -56,7 +60,7 @@ public class ButtonPress : MonoBehaviour
                 
                 transform.position = new Vector3(transform.position.x, 1.05f, transform.position.z);
                 OnClick.Invoke();
-                
+                buttonPressed = true;
                 timerEnd = true;
                
             }
@@ -70,6 +74,7 @@ public class ButtonPress : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, 1.1f, transform.position.z);
                 pressedDownTime = 1.0f;
                 timerEnd = false;
+                buttonPressed = false;
             }
         }
 
