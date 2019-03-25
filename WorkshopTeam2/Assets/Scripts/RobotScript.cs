@@ -81,8 +81,7 @@ public class RobotScript : MonoBehaviour
             state = EnemyState.Returning;
         else if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            print(hit + ", " + Vector3.Distance(transform.position, player.transform.position));
-            Debug.DrawRay(transform.position, transform.forward, Color.red);   
+            print(hit + ", " + Vector3.Distance(transform.position, player.transform.position)); 
             if (hit.collider.gameObject.tag == null || hit.collider.gameObject.tag!= "Player")
                 state = EnemyState.Returning;
         }
@@ -107,24 +106,25 @@ public class RobotScript : MonoBehaviour
 
     protected void Patrol()
     {
-        if (state == EnemyState.Patrolling)
+        if (Vector3.Distance(transform.position, player.transform.position) <= aggroRange)
         {
-            if (turning)
-            {
-                if (transform.position.z >= endpoint.z)
-                    transform.LookAt(startpoint);
-                else transform.LookAt(endpoint);
-                turning = false;
-            }
-            else
-            {
-                transform.Translate(Vector3.forward * movespeed * Time.deltaTime);
-                if (transform.position.z >= endpoint.z || transform.position.z <= startpoint.z)
-                    turning = true;
-            }
+            state = EnemyState.Chasing;
+            return;
+        }
+        if (turning)
+        {
+            if (transform.position.z >= endpoint.z)
+                transform.LookAt(startpoint);
+            else transform.LookAt(endpoint);
+            turning = false;
+        }
+        else
+        {
+            transform.Translate(Vector3.forward * movespeed * Time.deltaTime);
+            if (transform.position.z >= endpoint.z || transform.position.z <= startpoint.z)
+                turning = true;
         }
     }
-
     //public void OnCollision(Collision col)
     //{
     //    if (col.gameObject.tag == "Player")
