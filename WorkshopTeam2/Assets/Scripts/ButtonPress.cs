@@ -33,17 +33,21 @@ public class ButtonPress : MonoBehaviour
         
         if (buttonABC == 3)
         {
-            setBool.finalAnswer = true;
+            setBool.buttonC = true;
             Debug.Log("Answer Correct: " + buttonABC + " is clicked");
         }
-        else
+        else if(buttonABC == 2)
         {
-            setBool.finalAnswer = false;
+            setBool.buttonB = true;
             Debug.Log("False: " + buttonABC + " is clicked");
-        }
+        else if (buttonABC == 2)
+            {
+             setBool.buttonA = true;
+                Debug.Log("False: " + buttonABC + " is clicked");
+            }
 
-      
-    }
+
+        }
 
     // Update is called once per frame
     void Update()
