@@ -77,14 +77,15 @@ public class RobotScript : MonoBehaviour
         transform.LookAt(player.transform.position);
         Debug.DrawRay(transform.position, transform.forward, Color.red);
         RaycastHit hit;
-        if (Vector3.Distance(transform.position, player.transform.position) > aggroRange)
-            state = EnemyState.Returning;
-        else if (Physics.Raycast(transform.position, transform.forward, out hit))
+        
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            print(hit + ", " + Vector3.Distance(transform.position, player.transform.position)); 
+            print(hit.collider.gameObject.tag + ", " + Vector3.Distance(transform.position, player.transform.position)); 
             if (hit.collider.gameObject.tag == null || hit.collider.gameObject.tag!= "Player")
                 state = EnemyState.Returning;
         }
+        else if (Vector3.Distance(transform.position, player.transform.position) > aggroRange)
+            state = EnemyState.Returning;
     }
 
     protected void Return()
