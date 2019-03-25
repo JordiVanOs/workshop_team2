@@ -6,6 +6,8 @@ public class ScreenController : MonoBehaviour
 {
     private Material BackgroundColor;   //The material to change the color of
     private Renderer screenRenderer;    //The renderer to get the material from
+    public GameObject robot;
+    public buttonController ButtonController;
 
     void Start()
     {
@@ -14,6 +16,26 @@ public class ScreenController : MonoBehaviour
 
         //Start out as blue
         BackgroundColor.color = Color.blue;
+    }
+
+    void Update()
+    {
+        if (ButtonController.buttonA == true)
+        {
+            ShowCorrect();
+            //ButtonController.buttonA = false;
+            //robot.Disable();
+        }
+        else if (ButtonController.buttonB == true)
+        {
+            ShowWrong();
+            ButtonController.buttonB = false;
+        }
+        else if (ButtonController.buttonC == true)
+        {
+            ShowWrong();
+            ButtonController.buttonB = false;
+        }
     }
 
     public void ShowCorrect()

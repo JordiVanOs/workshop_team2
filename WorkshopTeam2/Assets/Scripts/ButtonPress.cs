@@ -41,7 +41,7 @@ public class ButtonPress : MonoBehaviour
             setBool.buttonB = true;
             Debug.Log("False: " + buttonABC + " is clicked");
         }
-        else if (buttonABC == 2)
+        else if (buttonABC == 1)
             {
              setBool.buttonA = true;
                 Debug.Log("False: " + buttonABC + " is clicked");
