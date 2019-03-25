@@ -13,6 +13,7 @@ public class RobotScript : MonoBehaviour
     public float turnspeed = 2.0f;
     public GameObject player;
     private int health = 3;
+    private Rigidbody rb;
 
     enum EnemyState
     {
@@ -25,6 +26,7 @@ public class RobotScript : MonoBehaviour
     {
         startpoint = transform.position;
         state = EnemyState.Patrolling;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -73,18 +75,26 @@ public class RobotScript : MonoBehaviour
     {
         //transform.position = Vector3.MoveTowards(transform.position, player, movespeed * Time.deltaTime);
         //if (Vector3.Distance(transform.position, player) > aggroRange)
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), movespeed * Time.deltaTime);
+        float distance = Vector3.Distance(transform.position, new Vector3(transform.position.x, player.transform.position.y, transform.position.z));
+        print(distance);
+        if (distance < .5f)
+            Reset();
+
+        Vector3 newpos = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), movespeed * Time.deltaTime);
+
+        rb.MovePosition(newpos);
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+
         Debug.DrawRay(transform.position, transform.forward, Color.red);
         RaycastHit hit;
-        
+
         if (Physics.Raycast(transform.position + new Vector3(0, 8, 0), transform.forward, out hit))
         {
-            print(hit.collider.gameObject.tag + ", " + Vector3.Distance(transform.position, player.transform.position)); 
-            if (hit.collider.gameObject.tag == null || hit.collider.gameObject.tag!= "Player")
+            print(hit.collider.gameObject.tag + ", " + Vector3.Distance(transform.position, player.transform.position));
+            if (hit.collider.gameObject.tag == null || hit.collider.gameObject.tag != "Player")
                 state = EnemyState.Returning;
         }
-        else if (Vector3.Distance(transform.position, player.transform.position) > aggroRange)
+        else if (distance > aggroRange)
             state = EnemyState.Returning;
     }
 
@@ -126,10 +136,9 @@ public class RobotScript : MonoBehaviour
                 turning = true;
         }
     }
-    //public void OnCollision(Collision col)
-    //{
-    //    if (col.gameObject.tag == "Player")
-    //        Reset();
-    //}
 
+    protected void Reset()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

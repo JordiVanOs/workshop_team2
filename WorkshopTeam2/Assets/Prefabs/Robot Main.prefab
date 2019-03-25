@@ -1736,8 +1736,8 @@ GameObject:
   - component: {fileID: 961914068743708598}
   - component: {fileID: 961914068736520668}
   - component: {fileID: 5014298886914469432}
-  - component: {fileID: 1233135346964142072}
   - component: {fileID: 1906734511981215140}
+  - component: {fileID: 3120596612331344703}
   m_Layer: 0
   m_Name: Robot Main
   m_TagString: Untagged
@@ -1800,7 +1800,20 @@ MonoBehaviour:
   movespeed: 10
   turnspeed: 2
   player: {fileID: 3433321772527478358, guid: 890f8f3568a4dc54e8001b8d35e8ae8d, type: 3}
---- !u!54 &1233135346964142072
+--- !u!65 &1906734511981215140
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961914068743799702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 1.8, z: 1}
+  m_Center: {x: 0, y: 0.9, z: 0.05}
+--- !u!54 &3120596612331344703
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1816,19 +1829,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1906734511981215140
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961914068743799702}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.8, z: 1}
-  m_Center: {x: 0, y: 0.9, z: 0.05}
 --- !u!1 &961914068743799704
 GameObject:
   m_ObjectHideFlags: 0
