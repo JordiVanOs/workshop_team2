@@ -209,7 +209,7 @@ PrefabInstance:
     - target: {fileID: 6255515182636550607, guid: 890f8f3568a4dc54e8001b8d35e8ae8d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 5.79
       objectReference: {fileID: 0}
     - target: {fileID: 6255515182636550607, guid: 890f8f3568a4dc54e8001b8d35e8ae8d,
         type: 3}
@@ -219,7 +219,7 @@ PrefabInstance:
     - target: {fileID: 6255515182636550607, guid: 890f8f3568a4dc54e8001b8d35e8ae8d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: -3.08
       objectReference: {fileID: 0}
     - target: {fileID: 6255515182636550607, guid: 890f8f3568a4dc54e8001b8d35e8ae8d,
         type: 3}
@@ -379,6 +379,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 7654072766393716222, guid: 7ab7497fe730ed148b2715e4d085d721,
+        type: 3}
+      propertyPath: m_TagString
+      value: Desk
+      objectReference: {fileID: 0}
     - target: {fileID: 7654072766098270679, guid: 7ab7497fe730ed148b2715e4d085d721,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -387,7 +392,7 @@ PrefabInstance:
     - target: {fileID: 7654072766393716210, guid: 7ab7497fe730ed148b2715e4d085d721,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.44
+      value: 4.75
       objectReference: {fileID: 0}
     - target: {fileID: 7654072766393716210, guid: 7ab7497fe730ed148b2715e4d085d721,
         type: 3}
@@ -397,7 +402,7 @@ PrefabInstance:
     - target: {fileID: 7654072766393716210, guid: 7ab7497fe730ed148b2715e4d085d721,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.67
+      value: -5.36
       objectReference: {fileID: 0}
     - target: {fileID: 7654072766393716210, guid: 7ab7497fe730ed148b2715e4d085d721,
         type: 3}

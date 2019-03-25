@@ -11,6 +11,9 @@ TagManager:
   - thee
   - water
   - Guide
+  - FxTemporaire
+  - projectile
+  - Desk
   layers:
   - Default
   - TransparentFX

@@ -78,7 +78,7 @@ public class RobotScript : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward, Color.red);
         RaycastHit hit;
         
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        if (Physics.Raycast(transform.position + new Vector3(0, 8, 0), transform.forward, out hit))
         {
             print(hit.collider.gameObject.tag + ", " + Vector3.Distance(transform.position, player.transform.position)); 
             if (hit.collider.gameObject.tag == null || hit.collider.gameObject.tag!= "Player")
