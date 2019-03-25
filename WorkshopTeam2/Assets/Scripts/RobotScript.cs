@@ -12,6 +12,7 @@ public class RobotScript : MonoBehaviour
     public float movespeed = 5.0f;
     public float turnspeed = 2.0f;
     public GameObject player;
+    private int health = 3;
 
     enum EnemyState
     {
@@ -64,7 +65,8 @@ public class RobotScript : MonoBehaviour
     public void Disable()
     {
         //disable robot
-        Destroy(gameObject);
+        health--;
+        if (health == 0) Destroy(gameObject);
     }
 
     protected void Chase()
@@ -73,12 +75,15 @@ public class RobotScript : MonoBehaviour
         //if (Vector3.Distance(transform.position, player) > aggroRange)
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movespeed * Time.deltaTime);
         transform.LookAt(player.transform.position);
+        Debug.DrawRay(transform.position, transform.forward, Color.red);
         RaycastHit hit;
         if (Vector3.Distance(transform.position, player.transform.position) > aggroRange)
             state = EnemyState.Returning;
-        else if (Physics.Raycast(transform.position, player.transform.position, out hit))
+        else if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            if (hit.collider.gameObject.tag != "Player")
+            print(hit + ", " + Vector3.Distance(transform.position, player.transform.position));
+            Debug.DrawRay(transform.position, transform.forward, Color.red);   
+            if (hit.collider.gameObject.tag == null || hit.collider.gameObject.tag!= "Player")
                 state = EnemyState.Returning;
         }
     }
