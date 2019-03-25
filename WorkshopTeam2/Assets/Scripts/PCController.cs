@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PCController : MonoBehaviour
 {
-    public GameObject robot = null;
+    public RobotScript robot = null;
 
     void Start()
     {
@@ -19,10 +19,7 @@ public class PCController : MonoBehaviour
         Debug.Log("Good Job!");
         if (robot != null)
         {
-            // if (robot is GameObject) 
-            // {
-            //     robot.Disable();
-            // }
+            robot.Disable();
         }
     }
 }
