@@ -73,8 +73,8 @@ public class RobotScript : MonoBehaviour
     {
         //transform.position = Vector3.MoveTowards(transform.position, player, movespeed * Time.deltaTime);
         //if (Vector3.Distance(transform.position, player) > aggroRange)
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movespeed * Time.deltaTime);
-        transform.LookAt(player.transform.position);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), movespeed * Time.deltaTime);
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
         Debug.DrawRay(transform.position, transform.forward, Color.red);
         RaycastHit hit;
         
