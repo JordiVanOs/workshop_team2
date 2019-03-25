@@ -63,7 +63,7 @@ public class ButtonPress : MonoBehaviour
             if (Physics.Raycast(ray, out Hit) && Hit.collider.gameObject == gameObject && buttonPressed == false)
             {
                 
-                transform.position = new Vector3(transform.position.x, 1.05f, transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y - 0.05f, transform.position.z);
                 OnClick.Invoke();
                 buttonPressed = true;
                 timerEnd = true;
@@ -76,7 +76,7 @@ public class ButtonPress : MonoBehaviour
             pressedDownTime -= Time.deltaTime;
             if (pressedDownTime <= 0.0f)
             {
-                transform.position = new Vector3(transform.position.x, 1.1f, transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y + 0.05f, transform.position.z);
                 pressedDownTime = 1.0f;
                 timerEnd = false;
                 buttonPressed = false;
