@@ -4,25 +4,6 @@ using UnityEngine;
 
 public class USBStickController : MonoBehaviour
 {
-    public Transform player;
-    public bool pickedUp = false;
-
-
-    void LateUpdate()
-    {
-        if (pickedUp)
-        {
-            transform.position = player.position + new Vector3(0, 0, 0.5f);
-        }
-    }
-
-    public void Interact()
-    {
-        pickedUp = !pickedUp;
-    }
-
-    //Everything above can be removed when integrated with Player Controller!
-
     void OnCollisionEnter(Collision collision)
     {
         GameObject otherObject = collision.gameObject;
