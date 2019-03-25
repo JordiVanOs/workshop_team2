@@ -60,24 +60,24 @@ public class Task3PlayerController : MonoBehaviour
 
     void Interact()
     {
-        for (var i = 0; i < hitColliders.Length; i++)
-        {
-            if (hitColliders[i] != null)
-            {
-                if (hitColliders[i].gameObject.tag == "USB-Stick")
-                {
-                    USBStickController controller = hitColliders[i].gameObject.GetComponent<USBStickController>();
-                    controller.Interact();
-                    if (usbStick == null)
-                    {
-                        usbStick = hitColliders[i].gameObject;
-                    }
-                    else
-                    {
-                        usbStick = null;
-                    }
-                }
-            }
-        }
+        // for (var i = 0; i < hitColliders.Length; i++)
+        // {
+        //     if (hitColliders[i] != null)
+        //     {
+        //         if (hitColliders[i].gameObject.tag == "USB-Stick")
+        //         {
+        //             USBStickController controller = hitColliders[i].gameObject.GetComponent<USBStickController>();
+        //             controller.Interact();
+        //             if (usbStick == null)
+        //             {
+        //                 usbStick = hitColliders[i].gameObject;
+        //             }
+        //             else
+        //             {
+        //                 usbStick = null;
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
