@@ -1735,6 +1735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 961914068743708598}
   - component: {fileID: 961914068736520668}
+  - component: {fileID: 5014298886914469432}
   m_Layer: 0
   m_Name: Robot Main
   m_TagString: Untagged
@@ -1778,6 +1779,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5014298886914469432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961914068743799702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf249ff30e1b7af44842a785a22b1f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startpoint: {x: 0, y: 0, z: 0}
+  endpoint: {x: 0, y: 0, z: 0}
+  aggroRange: 5
+  turning: 0
+  movespeed: 10
+  turnspeed: 2
+  player: {fileID: 3433321772527478358, guid: 890f8f3568a4dc54e8001b8d35e8ae8d, type: 3}
 --- !u!1 &961914068743799704
 GameObject:
   m_ObjectHideFlags: 0

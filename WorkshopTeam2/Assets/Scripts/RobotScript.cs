@@ -9,10 +9,9 @@ public class RobotScript : MonoBehaviour
     public Vector3 endpoint;
     public float aggroRange = 5.0f;
     public bool turning = false;
-    public float movespeed = 10.0f;
+    public float movespeed = 5.0f;
     public float turnspeed = 2.0f;
-    public Vector3 player;
-    //public GameObject player;
+    public GameObject player;
 
     enum EnemyState
     {
@@ -24,9 +23,7 @@ public class RobotScript : MonoBehaviour
     void Start()
     {
         startpoint = transform.position;
-        endpoint = startpoint + new Vector3(0, 0, 30);
         state = EnemyState.Patrolling;
-        player = new Vector3(5, 1.5f, -5);
     }
 
     // Update is called once per frame
@@ -52,8 +49,8 @@ public class RobotScript : MonoBehaviour
         if (Input.GetButton("Jump"))
             Disable();
 
-        if (Input.GetButton("Fire1"))
-            Reset();
+        //if (Input.GetButton("Fire1"))
+        //    Reset();
 
         if (Input.GetButton("Chase"))
             state = EnemyState.Chasing;
@@ -72,18 +69,32 @@ public class RobotScript : MonoBehaviour
 
     protected void Chase()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player, movespeed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, player) > aggroRange)
-        //    transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movespeed * Time.deltaTime);
-        //if (Vector3.Distance(transform.position, player.transform.position) > aggroRange)
+        //transform.position = Vector3.MoveTowards(transform.position, player, movespeed * Time.deltaTime);
+        //if (Vector3.Distance(transform.position, player) > aggroRange)
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movespeed * Time.deltaTime);
+        transform.LookAt(player.transform.position);
+        RaycastHit hit;
+        if (Vector3.Distance(transform.position, player.transform.position) > aggroRange)
             state = EnemyState.Returning;
+        else if (Physics.Raycast(transform.position, player.transform.position, out hit))
+        {
+            if (hit.collider.gameObject.tag != "Player")
+                state = EnemyState.Returning;
+        }
     }
 
     protected void Return()
     {
         if (Vector3.Distance(transform.position, startpoint) > Vector3.Distance(transform.position, endpoint))
+        {
             transform.position = Vector3.MoveTowards(transform.position, endpoint, movespeed * Time.deltaTime);
-        else transform.position = Vector3.MoveTowards(transform.position, startpoint, movespeed * Time.deltaTime);
+            transform.LookAt(endpoint);
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, startpoint, movespeed * Time.deltaTime);
+            transform.LookAt(startpoint);
+        }
 
         if (transform.position == startpoint || transform.position == endpoint)
             state = EnemyState.Patrolling;
@@ -109,14 +120,10 @@ public class RobotScript : MonoBehaviour
         }
     }
 
-    public void OnCollision(Collision col)
-    {
-        if (col.gameObject.tag == "Player")
-            Reset();
-    }
+    //public void OnCollision(Collision col)
+    //{
+    //    if (col.gameObject.tag == "Player")
+    //        Reset();
+    //}
 
-    protected void Reset()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }
