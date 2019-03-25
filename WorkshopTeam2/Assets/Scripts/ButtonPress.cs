@@ -14,7 +14,7 @@ public class ButtonPress : MonoBehaviour
     private bool buttonPressed = false;
     public buttonController setBool;
     public float pressedDownTime;
-    
+
     private bool timerEnd = false;
 
 
@@ -41,14 +41,14 @@ public class ButtonPress : MonoBehaviour
             setBool.buttonB = true;
             Debug.Log("False: " + buttonABC + " is clicked");
         }
-        else if (buttonABC == 2)
+        else if (buttonABC == 1)
         {
             setBool.buttonA = true;
             Debug.Log("False: " + buttonABC + " is clicked");
         }
 
 
-        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -56,18 +56,18 @@ public class ButtonPress : MonoBehaviour
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit Hit;
 
-    
+
         if (Input.GetMouseButtonDown(0))
         {
             pressedDownTime -= Time.deltaTime;
             if (Physics.Raycast(ray, out Hit) && Hit.collider.gameObject == gameObject && buttonPressed == false)
             {
-                
-                transform.position = new Vector3(transform.position.x, 1.05f, transform.position.z);
+
+                transform.position = new Vector3(transform.position.x, transform.position.y - 0.05f, transform.position.z);
                 OnClick.Invoke();
                 buttonPressed = true;
                 timerEnd = true;
-               
+
             }
         }
 
@@ -76,7 +76,7 @@ public class ButtonPress : MonoBehaviour
             pressedDownTime -= Time.deltaTime;
             if (pressedDownTime <= 0.0f)
             {
-                transform.position = new Vector3(transform.position.x, 1.1f, transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y + 0.05f, transform.position.z);
                 pressedDownTime = 1.0f;
                 timerEnd = false;
                 buttonPressed = false;

@@ -4,12 +4,53 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: polySurface13.001
+    100004: transform1
+    100006: transform2
+    100008: transform25
+    100010: transform26
+    100012: transform27
+    100014: transform28
+    100016: transform29
+    100018: transform3
+    100020: transform30
+    100022: transform31
+    100024: transform32
+    100026: transform33
+    100028: transform34
+    100030: transform4
     400000: //RootNode
+    400002: polySurface13.001
+    400004: transform1
+    400006: transform2
+    400008: transform25
+    400010: transform26
+    400012: transform27
+    400014: transform28
+    400016: transform29
+    400018: transform3
+    400020: transform30
+    400022: transform31
+    400024: transform32
+    400026: transform33
+    400028: transform34
+    400030: transform4
     2100000: blinn1
     2100002: lambert2
+    2100004: Frame
+    2100006: Wall
+    2100008: lambert1
+    2100010: GLass
+    2100012: Stone
+    2100014: Bars
     2300000: //RootNode
+    2300002: polySurface13.001
     3300000: //RootNode
+    3300002: polySurface13.001
     4300000: pCube1
+    4300002: polySurface13.001
+    6400000: //RootNode
+    6400002: polySurface13.001
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -53,7 +94,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
