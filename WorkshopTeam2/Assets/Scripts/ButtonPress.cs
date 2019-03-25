@@ -30,21 +30,22 @@ public class ButtonPress : MonoBehaviour
 
     void pressing()
     {
-        
+
         if (buttonABC == 3)
         {
             setBool.buttonC = true;
             Debug.Log("Answer Correct: " + buttonABC + " is clicked");
         }
-        else if(buttonABC == 2)
+        else if (buttonABC == 2)
         {
             setBool.buttonB = true;
             Debug.Log("False: " + buttonABC + " is clicked");
+        }
         else if (buttonABC == 2)
-            {
-             setBool.buttonA = true;
-                Debug.Log("False: " + buttonABC + " is clicked");
-            }
+        {
+            setBool.buttonA = true;
+            Debug.Log("False: " + buttonABC + " is clicked");
+        }
 
 
         }

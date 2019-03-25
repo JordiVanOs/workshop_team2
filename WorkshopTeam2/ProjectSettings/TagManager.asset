@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Button
+  - USB-Stick
+  - PC
+  - koffie
+  - thee
+  - water
+  - Guide
   layers:
   - Default
   - TransparentFX
