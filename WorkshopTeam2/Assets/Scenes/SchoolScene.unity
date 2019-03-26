@@ -4174,6 +4174,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 807932434996895461, guid: ba270f2daddfa4c4099a05beb2849e40,
+        type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 807932434996895461, guid: ba270f2daddfa4c4099a05beb2849e40,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 807932434996895461, guid: ba270f2daddfa4c4099a05beb2849e40,
+        type: 3}
+      propertyPath: m_DrawHalo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 807932434996895461, guid: ba270f2daddfa4c4099a05beb2849e40,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 807932434996895461, guid: ba270f2daddfa4c4099a05beb2849e40,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 807932434996895461, guid: ba270f2daddfa4c4099a05beb2849e40,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9708925
+      objectReference: {fileID: 0}
+    - target: {fileID: 807932434996895461, guid: ba270f2daddfa4c4099a05beb2849e40,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.91211283
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba270f2daddfa4c4099a05beb2849e40, type: 3}
 --- !u!1 &951320620 stripped
